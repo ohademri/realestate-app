@@ -15,7 +15,8 @@ const firebaseConfig = {
 
 const allowedUsers = [
   "ohademri@gmail.com",
-  "raberroee@gmail.com"
+  "raberroee@gmail.com",
+  "davidfishmanla@gmail.com"
 ];
 
 const app = initializeApp(firebaseConfig);
