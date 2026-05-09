@@ -11,7 +11,7 @@ import { firebaseConfig } from "./firebase-config.js";
 
 const allowedUsers = [
   "ohademri@gmail.com",
-  "raberroee@gmail.com",
+  "raberoee@gmail.com",
   "davidfishmanla@gmail.com"
 ];
 
