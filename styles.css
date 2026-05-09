@@ -497,6 +497,15 @@
     box-shadow: var(--shadow-sm);
   }
 
+  .form-footer-version {
+    margin-top: 10px;
+    font-size: 11px;
+    color: var(--text-secondary);
+    opacity: 0.6;
+    letter-spacing: 0.3px;
+    direction: ltr;
+  }
+
   /* Save indicator */
   .save-indicator {
     position: fixed;
