@@ -12,6 +12,9 @@
 <link href="logo.jpg" rel="apple-touch-icon"/>
 <link href="styles.css" rel="stylesheet"/>
 <title>טופס ביקור שמאי</title>
+
+<script>document.documentElement.classList.add("auth-pending");</script>
+<style>html.auth-pending body > .container, html.auth-pending #toast, html.auth-pending #saveIndicator { visibility: hidden; }</style>
 </head>
 <body>
 <div class="container">
@@ -369,5 +372,6 @@
 <div class="toast" id="toast"></div>
 <div class="save-indicator" id="saveIndicator">💾 נשמר</div>
 <script defer="" src="app.js"></script>
+<script type="module" src="./firebase-auth.js"></script>
 </body>
 </html>
