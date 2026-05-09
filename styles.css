@@ -534,6 +534,21 @@
     .header-logo { width: 64px; height: 64px; padding: 4px; border-radius: 8px; }
     .meta-bar { grid-template-columns: 1fr; padding: 16px 18px; gap: 14px; border-radius: 0 0 8px 8px; }
     .meta-bar input { padding: 12px 14px; font-size: 16px; }
+    .meta-bar input[type="date"] {
+      direction: ltr;
+      text-align: left;
+      width: 100%;
+      min-height: 48px;
+      padding: 12px 14px;
+      font-size: 16px;
+      box-sizing: border-box;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .meta-bar input[type="date"]::-webkit-date-and-time-value {
+      text-align: left;
+      min-height: 1.5em;
+    }
     .section { border-radius: 8px; margin-bottom: 14px; }
     .section-body { padding: 16px 16px 20px; }
     .section-header { padding: 14px 16px; gap: 8px; }
