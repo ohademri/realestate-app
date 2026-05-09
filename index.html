@@ -34,7 +34,10 @@
 </div>
 <div>
 <label for="visitDate">תאריך ביקור</label>
-<input id="visitDate" type="date" lang="en-GB"/>
+<div class="date-field-wrapper">
+  <span id="visitDateDisplay" class="date-display">בחר תאריך</span>
+  <input id="visitDate" type="date" class="date-overlay-input" tabindex="-1" aria-label="תאריך ביקור"/>
+</div>
 </div>
 <div>
 <label for="reportNumber">מספר דוח</label>

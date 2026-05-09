@@ -104,6 +104,20 @@
     });
   }
 
+  // --- Date display formatting ---
+  function formatDateDisplay(isoValue) {
+    if (!isoValue) return 'בחר תאריך';
+    const [y, m, d] = isoValue.split('-');
+    return `${parseInt(d)}/${parseInt(m)}/${y}`;
+  }
+
+  function syncDateDisplay() {
+    const dateInput = document.getElementById('visitDate');
+    const dateDisplay = document.getElementById('visitDateDisplay');
+    if (!dateInput || !dateDisplay) return;
+    dateDisplay.textContent = formatDateDisplay(dateInput.value);
+  }
+
   if ('serviceWorker' in navigator && location.protocol !== 'file:') {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('./sw.js').catch(() => {});
@@ -115,6 +129,8 @@
   if (!hadSavedData) {
     document.getElementById('visitDate').valueAsDate = new Date();
   }
+  syncDateDisplay();
+  document.getElementById('visitDate').addEventListener('change', syncDateDisplay);
   toggleBuildingTypeOther();
   bindCrossPlatformControls();
 
