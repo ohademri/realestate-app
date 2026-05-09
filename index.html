@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="he">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<link href="manifest.json" rel="manifest"/>
+<meta content="#1e3456" name="theme-color"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="default" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="שמאי" name="apple-mobile-web-app-title"/>
+<link href="logo.jpg" rel="apple-touch-icon"/>
+<link href="styles.css" rel="stylesheet"/>
+<title>טופס ביקור שמאי</title>
+</head>
+<body>
+<div class="container">
+<!-- Header -->
+<div class="form-header">
+<div class="header-text">
+<h1>🏠 טופס ביקור שמאי</h1>
+<p>דוח הערכת נכס — מילוי דיגיטלי</p>
+</div>
+<img alt="רבר פישמן - שמאות מקרקעין" class="header-logo" src="logo.jpg"/>
+</div>
+<!-- Meta Bar -->
+<div class="meta-bar">
+<div>
+<label for="appraiserName">שם השמאי</label>
+<input id="appraiserName" placeholder="הזן שם מלא" type="text"/>
+</div>
+<div>
+<label for="visitDate">תאריך ביקור</label>
+<input id="visitDate" type="date"/>
+</div>
+<div>
+<label for="reportNumber">מספר דוח</label>
+<input id="reportNumber" placeholder="מספר דוח / תיק" type="text"/>
+</div>
+</div>
+<!-- Section 1: תיאור הבניין -->
+<div class="section" id="sec-building">
+<div aria-expanded="true" class="section-header" data-section-target="sec-building" role="button" tabindex="0">
+<div class="section-icon">🏢</div>
+<h2>תיאור הבניין</h2>
+<span class="section-toggle">▼</span>
+</div>
+<div class="section-body">
+<div class="form-grid">
+<div class="field">
+<label for="buildingType">סוג הבניין</label>
+<select data-toggle-other="buildingTypeOther" id="buildingType">
+<option value="">לא נבחר</option>
+<option value="מגורים">מגורים</option>
+<option value="משרדים">משרדים</option>
+<option value="מסחרי">מסחרי</option>
+<option value="תעשייתי">תעשייתי</option>
+<option value="מגורים ומסחר">מגורים ומסחר</option>
+<option value="אחר">אחר</option>
+</select>
+<input id="buildingTypeOther" placeholder="פרט סוג בניין..." style="display:none; margin-top:8px;" type="text"/>
+</div>
+<div class="field">
+<label for="buildingAge">גיל הבניין <span class="hint">(בשנים)</span></label>
+<div class="stepper-wrap">
+<input data-numeric="true" id="buildingAge" inputmode="numeric" max="200" min="0" pattern="[0-9]*" placeholder="כ-" type="text"/>
+<div class="stepper-btns">
+<button aria-label="הגדל" class="stepper-btn" data-step-delta="1" data-step-target="buildingAge" type="button">▲</button>
+<button aria-label="הקטן" class="stepper-btn" data-step-delta="-1" data-step-target="buildingAge" type="button">▼</button>
+</div>
+</div>
+</div>
+<div class="field">
+<label for="totalFloors">מספר קומות</label>
+<div class="stepper-wrap">
+<input data-numeric="true" id="totalFloors" inputmode="numeric" max="100" min="0" pattern="[0-9]*" placeholder="קומות מעל + מתחת" type="text"/>
+<div class="stepper-btns">
+<button aria-label="הגדל" class="stepper-btn" data-step-delta="1" data-step-target="totalFloors" type="button">▲</button>
+<button aria-label="הקטן" class="stepper-btn" data-step-delta="-1" data-step-target="totalFloors" type="button">▼</button>
+</div>
+</div>
+</div>
+<div class="field">
+<label for="aboveFloors">קומות מעל קרקע</label>
+<div class="stepper-wrap">
+<input data-numeric="true" id="aboveFloors" inputmode="numeric" max="100" min="0" pattern="[0-9]*" placeholder="" type="text"/>
+<div class="stepper-btns">
+<button aria-label="הגדל" class="stepper-btn" data-step-delta="1" data-step-target="aboveFloors" type="button">▲</button>
+<button aria-label="הקטן" class="stepper-btn" data-step-delta="-1" data-step-target="aboveFloors" type="button">▼</button>
+</div>
+</div>
+</div>
+<div class="field">
+<label for="belowFloors">קומות מתחת לקרקע</label>
+<div class="stepper-wrap">
+<input data-numeric="true" id="belowFloors" inputmode="numeric" max="20" min="0" pattern="[0-9]*" placeholder="" type="text"/>
+<div class="stepper-btns">
+<button aria-label="הגדל" class="stepper-btn" data-step-delta="1" data-step-target="belowFloors" type="button">▲</button>
+<button aria-label="הקטן" class="stepper-btn" data-step-delta="-1" data-step-target="belowFloors" type="button">▼</button>
+</div>
+</div>
+</div>
+<div class="field">
+<label for="elevatorExists">מעלית</label>
+<select id="elevatorExists">
+<option value="">לא נבחר</option>
+<option value="יש">יש</option>
+<option value="אין">אין</option>
+</select>
+</div>
+<div class="field">
+<label for="elevatorCount">מספר מעליות</label>
+<div class="stepper-wrap">
+<input data-numeric="true" id="elevatorCount" inputmode="numeric" max="20" min="0" pattern="[0-9]*" placeholder="" type="text"/>
+<div class="stepper-btns">
+<button aria-label="הגדל" class="stepper-btn" data-step-delta="1" data-step-target="elevatorCount" type="button">▲</button>
+<button aria-label="הקטן" class="stepper-btn" data-step-delta="-1" data-step-target="elevatorCount" type="button">▼</button>
+</div>
+</div>
+</div>
+<div class="field">
+<label for="entranceCount">מספר כניסות</label>
+<div class="stepper-wrap">
+<input data-numeric="true" id="entranceCount" inputmode="numeric" max="50" min="0" pattern="[0-9]*" placeholder="" type="text"/>
+<div class="stepper-btns">
+<button aria-label="הגדל" class="stepper-btn" data-step-delta="1" data-step-target="entranceCount" type="button">▲</button>
+<button aria-label="הקטן" class="stepper-btn" data-step-delta="-1" data-step-target="entranceCount" type="button">▼</button>
+</div>
+</div>
+</div>
+<div class="field">
+<label for="unitsInBuilding">מס׳ יחידות בבניין</label>
+<div class="stepper-wrap">
+<input data-numeric="true" id="unitsInBuilding" inputmode="numeric" max="500" min="0" pattern="[0-9]*" placeholder="" type="text"/>
+<div class="stepper-btns">
+<button aria-label="הגדל" class="stepper-btn" data-step-delta="1" data-step-target="unitsInBuilding" type="button">▲</button>
+<button aria-label="הקטן" class="stepper-btn" data-step-delta="-1" data-step-target="unitsInBuilding" type="button">▼</button>
+</div>
+</div>
+</div>
+<div class="field">
+<label for="unitsPerFloor">מס׳ יחידות בקומה</label>
+<div class="stepper-wrap">
+<input data-numeric="true" id="unitsPerFloor" inputmode="numeric" max="50" min="0" pattern="[0-9]*" placeholder="" type="text"/>
+<div class="stepper-btns">
+<button aria-label="הגדל" class="stepper-btn" data-step-delta="1" data-step-target="unitsPerFloor" type="button">▲</button>
+<button aria-label="הקטן" class="stepper-btn" data-step-delta="-1" data-step-target="unitsPerFloor" type="button">▼</button>
+</div>
+</div>
+</div>
+<div class="field">
+<label for="unitsPerEntrance">מס׳ יחידות בכניסה</label>
+<div class="stepper-wrap">
+<input data-numeric="true" id="unitsPerEntrance" inputmode="numeric" max="100" min="0" pattern="[0-9]*" placeholder="" type="text"/>
+<div class="stepper-btns">
+<button aria-label="הגדל" class="stepper-btn" data-step-delta="1" data-step-target="unitsPerEntrance" type="button">▲</button>
+<button aria-label="הקטן" class="stepper-btn" data-step-delta="-1" data-step-target="unitsPerEntrance" type="button">▼</button>
+</div>
+</div>
+</div>
+<div class="field">
+<label for="buildingCondition">מצב פיזי של הבניין</label>
+<select id="buildingCondition">
+<option value="">לא נבחר</option>
+<option value="מצוין">מצוין</option>
+<option value="טוב מאוד">טוב מאוד</option>
+<option value="טוב">טוב</option>
+<option value="סביר">סביר</option>
+<option value="ירוד">ירוד</option>
+<option value="במצב גרוע">במצב גרוע</option>
+</select>
+</div>
+<div class="field full-width">
+<label for="buildingNotes">הערות נוספות לבניין</label>
+<textarea id="buildingNotes" placeholder="פרטים נוספים..." rows="2"></textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 2: תיאור הדירה -->
+<div class="section" id="sec-apartment">
+<div aria-expanded="true" class="section-header" data-section-target="sec-apartment" role="button" tabindex="0">
+<div class="section-icon">🚪</div>
+<h2>תיאור הדירה</h2>
+<span class="section-toggle">▼</span>
+</div>
+<div class="section-body">
+<div class="form-grid">
+<div class="field">
+<label for="levelCount">מספר מפלסים</label>
+<input data-numeric="true" id="levelCount" inputmode="numeric" max="10" min="1" pattern="[0-9]*" placeholder="" type="text"/>
+</div>
+<div class="field">
+<label for="roomCount">מספר חדרים</label>
+<input data-numeric="true" id="roomCount" inputmode="numeric" max="20" min="0" pattern="[0-9]*" placeholder="למשל 3.5" step="0.5" type="text"/>
+</div>
+<div class="field">
+<label for="entranceNumber">מספר כניסה</label>
+<input id="entranceNumber" placeholder="" type="text"/>
+</div>
+<div class="field full-width">
+<label for="apartmentLayout">חלוקה</label>
+<textarea id="apartmentLayout" placeholder="תיאור חלוקת הדירה..." rows="2"></textarea>
+</div>
+<div class="sub-label">אזורים ומרכיבי הדירה</div>
+<div class="field">
+<label for="kitchenDesc">מטבח</label>
+<textarea id="kitchenDesc" placeholder="סוג, מצב, גודל..." rows="2"></textarea>
+</div>
+<div class="field">
+<label for="bathroomDesc">חדר רחצה</label>
+<textarea id="bathroomDesc" placeholder="מספר, סוג, מצב..." rows="2"></textarea>
+</div>
+<div class="field">
+<label for="windowsDesc">חלונות</label>
+<textarea id="windowsDesc" placeholder="סוג, מצב, כיוון..." rows="2"></textarea>
+</div>
+<div class="field">
+<label for="doorsDesc">דלתות</label>
+<textarea id="doorsDesc" placeholder="סוג, מצב..." rows="2"></textarea>
+</div>
+<div class="field">
+<label for="acDesc">מזגנים</label>
+<textarea id="acDesc" placeholder="כמות, סוג, מצב..." rows="2"></textarea>
+</div>
+<div class="field">
+<label for="flooringDesc">ריצוף</label>
+<textarea id="flooringDesc" placeholder="סוג ריצוף, מצב..." rows="2"></textarea>
+</div>
+<div class="field">
+<label for="innerHeight">גובה הדירה הפנימי <span class="hint">(מ׳)</span></label>
+<input data-numeric="true" id="innerHeight" inputmode="numeric" max="10" min="0" pattern="[0-9]*" placeholder="למשל 2.7" step="0.1" type="text"/>
+</div>
+<div class="field">
+<label for="apartmentFloor">קומת הדירה</label>
+<input data-numeric="true" id="apartmentFloor" inputmode="numeric" max="100" min="-5" pattern="[0-9]*" placeholder="" type="text"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 3: שימוש ומיקום -->
+<div class="section" id="sec-usage">
+<div aria-expanded="true" class="section-header" data-section-target="sec-usage" role="button" tabindex="0">
+<div class="section-icon">📍</div>
+<h2>שימוש ומיקום</h2>
+<span class="section-toggle">▼</span>
+</div>
+<div class="section-body">
+<div class="form-grid">
+<div class="field">
+<label for="propertyUse">השימוש בנכס</label>
+<select id="propertyUse">
+<option value="">לא נבחר</option>
+<option value="מגורים">מגורים</option>
+<option value="משרד">משרד</option>
+<option value="מסחרי">מסחרי</option>
+<option value="אחר">אחר</option>
+</select>
+</div>
+<div class="field">
+<label for="apartmentPosition">מיקום הדירה</label>
+<select id="apartmentPosition">
+<option value="">לא נבחר</option>
+<option value="חזיתית">חזיתית</option>
+<option value="עורפית">עורפית</option>
+<option value="חזיתית ועורפית">חזיתית ועורפית</option>
+</select>
+</div>
+<div class="field full-width">
+<label>כיווני אוויר</label>
+<div class="checkbox-group">
+<label><input id="dirEast" type="checkbox" value="מזרח"/><span>מזרח</span></label>
+<label><input id="dirNorth" type="checkbox" value="צפון"/><span>צפון</span></label>
+<label><input id="dirWest" type="checkbox" value="מערב"/><span>מערב</span></label>
+<label><input id="dirSouth" type="checkbox" value="דרום"/><span>דרום</span></label>
+</div>
+</div>
+<div class="field">
+<label for="levelType">מפלס</label>
+<select id="levelType">
+<option value="">לא נבחר</option>
+<option value="רצוף">רצוף</option>
+<option value="מפוצל">מפוצל</option>
+</select>
+</div>
+<div class="field full-width">
+<label for="usageNotes">הערות שימוש ומיקום</label>
+<textarea id="usageNotes" placeholder="פרטים נוספים..." rows="2"></textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 4: מצב פיזי ותחזוקתי -->
+<div class="section" id="sec-condition">
+<div aria-expanded="true" class="section-header" data-section-target="sec-condition" role="button" tabindex="0">
+<div class="section-icon">🔧</div>
+<h2>מצב פיזי ותחזוקתי</h2>
+<span class="section-toggle">▼</span>
+</div>
+<div class="section-body">
+<div class="form-grid">
+<div class="field">
+<label for="physicalCondition">מצב פיזי הנכס</label>
+<select id="physicalCondition">
+<option value="">לא נבחר</option>
+<option value="מצוין">מצוין</option>
+<option value="טוב מאוד">טוב מאוד</option>
+<option value="טוב">טוב</option>
+<option value="סביר">סביר</option>
+<option value="ירוד">ירוד</option>
+<option value="במצב גרוע">במצב גרוע</option>
+</select>
+</div>
+<div class="field">
+<label for="maintenanceCondition">מצב תחזוקתי</label>
+<select id="maintenanceCondition">
+<option value="">לא נבחר</option>
+<option value="מצוין">מצוין</option>
+<option value="טוב מאוד">טוב מאוד</option>
+<option value="טוב">טוב</option>
+<option value="סביר">סביר</option>
+<option value="ירוד">ירוד</option>
+<option value="במצב גרוע">במצב גרוע</option>
+</select>
+</div>
+<div class="field full-width">
+<label for="conditionNotes">הערות מצב פיזי ותחזוקה</label>
+<textarea id="conditionNotes" placeholder="תיאור מפורט של מצב הנכס..." rows="3"></textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 5: הערות כלליות -->
+<div class="section" id="sec-general">
+<div aria-expanded="true" class="section-header" data-section-target="sec-general" role="button" tabindex="0">
+<div class="section-icon">📝</div>
+<h2>הערות כלליות</h2>
+<span class="section-toggle">▼</span>
+</div>
+<div class="section-body">
+<div class="form-grid">
+<div class="field full-width">
+<label for="generalNotes">הערות השמאי לגבי הנכס</label>
+<textarea id="generalNotes" placeholder="הערות כלליות, תצפיות, ליקויים, המלצות, או כל מידע נוסף שרלוונטי להערכת הנכס..." rows="6"></textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="actions">
+<button class="btn btn-primary" id="downloadHtmlBtn">
+<span>⬇</span> הורד כ-HTML
+    </button>
+<button class="btn btn-word" id="downloadWordBtn">
+<span>📄</span> הורד כ-Word
+    </button>
+<button class="btn btn-secondary" id="printBtn">
+<span>🖨</span> הדפס
+    </button>
+<button class="btn btn-danger" id="clearFormBtn">
+<span>✕</span> נקה טופס
+    </button>
+</div>
+<!-- Footer -->
+<div class="form-footer">
+<img alt="רבר פישמן — שמאות מקרקעין — לשכת שמאי מקרקעין" src="footer-logo.jpg"/>
+</div>
+</div>
+<div class="toast" id="toast"></div>
+<div class="save-indicator" id="saveIndicator">💾 נשמר</div>
+<script defer="" src="app.js"></script>
+</body>
+</html>
