@@ -143,6 +143,18 @@
     box-shadow: 0 0 0 3px rgba(201,168,76,0.25);
   }
 
+  .meta-bar input[type="date"] {
+    appearance: none;
+    -webkit-appearance: none;
+    text-align: right;
+    direction: rtl;
+    box-sizing: border-box;
+  }
+
+  .meta-bar input[type="date"]::-webkit-date-and-time-value {
+    text-align: right;
+  }
+
   /* Sections */
   .section {
     background: var(--surface);
